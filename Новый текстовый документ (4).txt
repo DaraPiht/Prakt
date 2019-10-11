@@ -1,0 +1,64 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+
+	setlocale(LC_ALL, "Rus");
+	short t;
+	double a, b, c, Ax, Ay, Bx, By, Cx, Cy, p;
+	cout << "Для поиска площади выберите один из способов 1 или 2:";
+	cin >> t;
+
+	switch (t)
+	{
+	case (1):
+	{   cout << "Введите три стороны треугольника:";
+		cin >> a >> b >> c;
+
+		if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+		{
+			cout << "Треугольника с введенными параметрами не существует.";
+			return 0;
+		}
+
+		p = (a + b + c) / 2;
+		p = sqrt(p * (p - a) * (p - b) * (p - c));
+		cout << "S = " << p << "\n";
+		break;
+	}
+
+	case (2):
+	{
+		cout << "Введите координаты точки A:";
+		cin >> Ax >> Ay;
+		cout << "Введите координаты точки B:";
+		cin >> Bx >> By;
+		cout << "Введите координаты точки C:";
+		cin >> Cx >> Cy;
+
+		a = sqrt((Cx - Bx) * (Cx - Bx) + (Cy - By) * (Cy - By));
+		b = sqrt((Cx - Ax) * (Cx - Ax) + (Cy - Ay) * (Cy - Ay));
+		c = sqrt((Ax - Bx) * (Ax - Bx) + (Ay - By) * (Ay - By));
+
+		if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+		{
+			cout << "Треугольника с введенными параметрами не существует.";
+			return 0;
+		}
+
+		p = (a + b + c) / 2;
+		p = sqrt(p * (p - a) * (p - b) * (p - c));
+		cout << "S = " << p << "\n";
+
+		break;
+	}
+
+	default:
+	cout << "Неcуществующий способ ввода параметров треугольника\n";
+		break;
+	}
+
+}

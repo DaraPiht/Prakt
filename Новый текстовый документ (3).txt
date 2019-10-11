@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	double a, b, c, x,D;
+	setlocale(LC_ALL, "Rus");
+	cin >> a >> b >> c;
+	if ((a == 0) && (b == 0))
+	{
+		cout << "Уравнение введено неверно\n";
+		return 1;
+	}
+	if ((b == 0) && (c == 0))
+	{
+		cout << "x=0\n";
+		return 0;
+	}
+	if (a == 0)
+	{
+		cout << "x= " << -c / b;
+	}
+	else
+	{
+
+		D = sqrt(b * b - 4 * a * c);
+		if (D >= 0)
+		{
+			x = ((-b + D) / 2 * a);
+			a = ((-b - D) / 2 * a);
+			(x > a) ? (cout << "X1 = " << x << "\n", cout << "X2 = " << a) : (x = a) ? (cout << "X = " << x) : (cout << "X1 = " << a << "\n", cout << "X2 = " << x);
+		}
+		else
+			cout << "нет вещественных решений";
+	}
+	cout << "\n";
+}
