@@ -1,23 +1,25 @@
-#include "stdafx.h"
 #include <iostream>
 #include <math.h>
-using namespace std;
+using namespace std;    // https://memepedia.ru/wp-content/uploads/2018/08/wo6cxxstlzc-768x597.jpg
 
 int main()
 {
-	double a, b, c, x,D;
+	double a, b, c, x;
 	setlocale(LC_ALL, "Rus");
 	cin >> a >> b >> c;
+
 	if ((a == 0) && (b == 0))
 	{
-		cout << "Óðàâíåíèå ââåäåíî íåâåðíî\n";
+		cout << "Ð£Ñ€Ð°Ð²Ð½ÐµÐ½Ð¸Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð¾ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾\n";
 		return 1;
 	}
-	if ((b == 0) && (c == 0))
+
+	if ((b == 0) && (c == 0)||((a==0)&&(c==0)))
 	{
-		cout << "x=0\n";
+		cout << "X=0\n";
 		return 0;
 	}
+
 	if (a == 0)
 	{
 		cout << "x= " << -c / b;
@@ -25,15 +27,25 @@ int main()
 	else
 	{
 
-		D = sqrt(b * b - 4 * a * c);
-		if (D >= 0)
+		c = sqrt(b * b - 4 * a * c);
+		if (c >= 0)
 		{
-			x = ((-b + D) / 2 * a);
-			a = ((-b - D) / 2 * a);
-			(x > a) ? (cout << "X1 = " << x << "\n", cout << "X2 = " << a) : (x = a) ? (cout << "X = " << x) : (cout << "X1 = " << a << "\n", cout << "X2 = " << x);
+			x = ((-b + c) / (2 * a));
+			a = ((-b - c) / (2 * a));
+			
+			if (x==a)
+			{
+				cout << "X = " << x;
+			}
+			else
+			{
+				cout << "X1 = " << x << "\n";
+				cout << "X1 = " << a << "\n";
+			}
+
 		}
 		else
-			cout << "íåò âåùåñòâåííûõ ðåøåíèé";
+			cout << "Ð½ÐµÑ‚ Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ñ… Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹";
 	}
 	cout << "\n";
-}
+}   
