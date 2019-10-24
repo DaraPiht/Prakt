@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include<ctime>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	setlocale(LC_ALL, "Russian");
+	int a, b, c, i;
+	c = 1;
+	while (c == 1)
+	{
+		i = 0;
+		a = rand() % 101;
+		cout << "Введите число от 1 до 100" << endl;
+		while (i < 5)
+		{
+			cin >> b;
+			if (a > b)
+				cout << "Загаданное число больше " << b << endl;
+			if (a < b)
+				cout << "Загаданное число меньше " << b << endl;
+			if (a == b)
+			{
+				cout << "Вы угадали! " << b << endl;
+				return 0;
+
+			}
+			i = i + 1;
+		}
+
+		cout << "Вы проиграли.Загаданное число " << a << ".Хотите начать заново?Нажмите 1,для повтора.";
+		cin >> c;
+		return 0;
+	}
+}
