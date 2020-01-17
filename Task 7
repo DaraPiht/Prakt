@@ -1,0 +1,57 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	short g;
+	double a, b, c, p, Ax, Ay, Bx, By, Cx, Cy;
+	cout << "Выберете способ нахождения площади 1-через длины сторон,2-через координаты вершин\n";
+	cin >> g;
+	switch (g)
+	{
+	case(1):
+	{
+		cin >> a >> b >> c;
+		if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+		{
+			cout << "Такого треугольника не существует\n";
+			return 0;
+		}
+		p = (a + b + c) / 2;
+		p = sqrt(p*(p - a)*(p - b)*(p - c));
+		cout << "S=" << p << endl;
+		break;
+	}
+	case(2):
+	{
+		cout << "Введите координаты точки А:";
+		cin >> Ax >> Ay;
+		cout << "Введите координаты точки B:";
+		cin >> Bx >> By;
+		cout << "Введите координаты точки C:";
+		cin >> Cx >> Cy;
+		a = (sqrt((Cx - Bx)*(Cx - Bx) + (Cy - By)*(Cy - By)));
+		b = (sqrt((Cx - Ax)*(Cx - Ax) + (Cy - Ay)*(Cy - Ay)));
+		c = (sqrt((Ax - Bx)*(Ax - Bx) + (Ay - By)*(Ay - By)));
+		if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+		{
+			cout << "Такого треугольника не существует\n";
+			return 0;
+		}
+
+		p = (a + b + c) / 2;
+		p = sqrt(p*(p - a)*(p - b)*(p - c));
+		cout << "S=" << p << endl;
+		break;
+	}
+
+	default:
+	{
+		break;
+	}
+	}
+	return 0;
+}
