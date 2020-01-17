@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool comparator(int a, int b) {
+	if (a > b) {
+		return true;
+	}
+	else {
+		return false;
+	}
+               }
+
+int main()
+{
+	int n;
+	cin >> n;
+	int a[5] = { 20000000,20000000,20000000,20000000,20000000 };
+	for (int i = 0; i < n; i++)
+	{
+		int k;
+		cin >> k;
+		if (k < a[0])
+		{
+			a[0] = k;
+			sort(a, a + 5, comparator);
+		}
+		for (int c = 0; c < 5; c++)
+		{
+			if (a[c] != 20000000) cout << a[c] << ' ';
+		}
+		cout << '\n';
+
+	}
+}
