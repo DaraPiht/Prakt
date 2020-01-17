@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double a,s,su, i;
+	int  c;
+	cin >> a;
+	cin >> c;
+	if (c > 0)
+	{
+		s = 1;
+		for (i = 0; i < c; i++)
+		{
+			s = s*a;
+		}
+		cout << s << endl;
+	}
+	else
+	{
+		c = -c;
+		s = 1;
+		for (i = 0; i < c; i++)
+		{
+			s = s*a;
+		}
+		if (s == 0)
+		{
+			cout << "Недопустимый ввод";
+			return 0;
+		}
+		su = 1 / s;
+		cout << su << endl;
+	}
+	return 0;
+}
