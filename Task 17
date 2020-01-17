@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+	double BMI(double weight, double height)
+	{
+		return weight / height / height;
+	}
+
+	void printBMI(double BMI)
+	{
+		if (BMI < 18.5) cout << "Underweight";
+
+		else if ((18.5 <= BMI) && (BMI< 25.0)) cout << "Normal weight";
+
+		else if ((25.0 <= BMI) && (BMI < 30.0)) cout << "Overweight";
+
+		else if (30.0 <= BMI) cout << "Obesity";
+		cout << endl;
+	}
+
+	int main()
+	{
+		setlocale(LC_ALL, "Russian");
+		double wight, height;
+		cout << "Введите вес в кг и рост в сантиметрах: ";
+		cin >> wight >> height;
+		height /= 100;
+		printBMI(BMI(wight, height));
+	}
+	
