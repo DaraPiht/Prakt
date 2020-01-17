@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	int s, l1, r1, l2, r2,tl1,tl2;
+	bool c = false;
+	cin >> s >> l1 >> r1 >> l2 >> r2;
+	for (tl1= l1; tl1 <= r1; tl1++) {
+		for (tl2=l2; tl2 <= r2; tl2++) {
+			if (tl1 + tl2 == s) {
+				c = true;
+				break;
+			}
+		}
+		if (c)
+		break;
+	}
+	if (c)
+		cout << tl1 << ' ' << tl2 << endl;
+	else 
+		cout << -1 << endl;
+}
