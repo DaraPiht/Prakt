@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b, c, x;
+	double D, x1, x2;
+	cin >> a >> b >> c;
+	D = (b*b) - (4 * a*c);
+	if (D > 0)
+	{
+		x1 = (-b - sqrt(D)) / 2 * a;
+		x2 = (-b + sqrt(D)) / 2 * a;
+		cout << x1 << "/n" << x2 << endl;
+	}
+	else if (D < 0)
+	{
+		cout << "Нет корней" << endl;
+	}
+	else 	if (D = 0)
+	{
+		x1 = (-b - sqrt(D)) / 2 * a;
+		cout << x1 << endl;
+	}
+	return 0;
+}
