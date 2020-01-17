@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+void factorization(int n)
+{
+	int d = 2;
+	cout << n << " = ";
+	while (n > 1)
+	{
+		int k = 0;
+		while (n % d == 0)
+		{
+			k++;
+			n = n / d;
+		}
+		if (k > 0)
+		{
+			cout << d;
+			if (k > 1) cout << "^" << k;
+			if (n > 1) cout << "*";
+		}
+		d++;
+	}
+	cout << endl;
+
+}
+
+int main()
+{
+	int n;
+	cout << "N = ";
+	cin >> n;
+	factorization(n);
+    return 0;
+}
