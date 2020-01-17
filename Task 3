@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+  using namespace std;
+
+  int main()
+  {
+	  int a;
+	  int b;
+	  cin >> a >> b;
+	  cout << a + b << endl;
+	  cout << a - b << endl;
+	  cout << a * b << endl;
+	  cout << a / b << endl;//при делении целого на целое при заданном типе данных int будем получать целую часть числа
+	  double c;
+	  double d;
+	  cin >> c >> d;//пользователь должен ввести дробные числа
+	  cout << c + d << endl;
+	  cout << c - d << endl;
+	  cout << c * d << endl;
+	  cout << c / d << endl;
+	  int e;
+	  double i;
+	  cin >> e >> i;
+	  cout << e + i << endl;//получаем точные значения,т.к. одна из переменных имеет тип данных double
+	  cout << e - i << endl;
+	  cout << e * i << endl;
+	  cout << e / i << endl;
+	  double n;
+	  int m;
+	  cin >> n >> m;
+	  cout << n + m << endl;//получаем точные значения,т.к. одна из переменных имеет тип данных double
+	  cout << n - m << endl;
+	  cout << n * m << endl;
+	  cout << n / m << endl;
+	  return 0;
+  }
