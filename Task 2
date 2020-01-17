@@ -1,0 +1,14 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+  int main()
+ {
+	int a = 3;
+	int b = 3.14;
+	cout << a << "\n" << b << endl;//при объявленном типе данных int цифры после запятой в дробном числе просто отбрасываются
+	double c = 3;
+	double d = 3.14;
+	cout << c << "\n" << d << endl;//корректно будет выводиться и целое и дробное число
+	return 0;
+ }
