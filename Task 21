@@ -1,0 +1,52 @@
+#include "stdafx.h"
+#include <iostream> 
+#include <ctime> 
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+
+	const int s1 = 10, s2 = 8;
+	int a[s1][s2]{ {} };
+	int i, j, k = 0, one, two;
+	i = rand() % 10;
+	j = rand() % 8;
+	a[i][j] = 3;
+
+	while (k != 5)
+	{
+		cout  << "Введите координаты: ";
+		cin >> one >> two;
+
+		if ((one > s1 - 1) || (two > s2 - 1) || (one < 0) || (two < 0))
+		{
+			cout << "Выход за границу массива\n";
+			continue;
+		}
+
+		if (a[one][two] == 1)
+		{
+			cout << "Эту уже проверяли\n";
+			continue;
+		}
+
+		if (a[one][two] == 0)
+		{
+			a[one][two] = 1;
+			k++;
+			cout << "Не верно\n";
+		}
+
+		if (a[one][two] == 3)
+		{
+			cout << "Вы угадали\n";
+			return 0;
+		}
+
+	}
+
+	cout << "GAME OVER\n" << i << "\t" << j;
+
+}
